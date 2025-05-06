@@ -1,0 +1,286 @@
+/* Dashboard Page Styles */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--medium-dark-bg);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--spacing-lg);
+}
+
+.team-info {
+  display: flex;
+  align-items: center;
+}
+
+.team-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-right: var(--spacing-md);
+}
+
+.score-display {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-family: 'Fira Code', monospace;
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: all var(--transition-fast);
+}
+
+.logout-btn:hover {
+  color: var(--error-color);
+  opacity: 1;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.tab:hover {
+  color: var(--primary-color);
+}
+
+.tab.active {
+  color: var(--primary-color);
+  text-shadow: 0 0 5px var(--primary-color);
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Challenges */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md);
+}
+
+.challenge-card {
+  background-color: var(--medium-dark-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  transition: all var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.challenge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.challenge-card.solved {
+  border-color: var(--success-color);
+  box-shadow: 0 0 10px rgba(0, 255, 127, 0.2);
+}
+
+.challenge-card.solved::before {
+  content: 'SOLVED';
+  position: absolute;
+  top: 10px;
+  right: -30px;
+  background-color: var(--success-color);
+  color: var(--dark-bg);
+  padding: 5px 40px;
+  font-size: 0.8rem;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.challenge-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+.challenge-category {
+  font-size: 0.8rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+}
+
+.challenge-category.web {
+  color: #ff9800;
+  border-color: rgba(255, 152, 0, 0.3);
+}
+
+.challenge-category.crypto {
+  color: #9c27b0;
+  border-color: rgba(156, 39, 176, 0.3);
+}
+
+.challenge-category.forensics {
+  color: #2196f3;
+  border-color: rgba(33, 150, 243, 0.3);
+}
+
+.challenge-category.reverse {
+  color: #f44336;
+  border-color: rgba(244, 67, 54, 0.3);
+}
+
+.challenge-points {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  margin-top: var(--spacing-xs);
+}
+
+.challenge-description {
+  margin-bottom: var(--spacing-md);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.challenge-hint-toggle {
+  background: none;
+  border: none;
+  color: var(--warning-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: var(--spacing-sm);
+  font-family: 'Fira Code', monospace;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.challenge-hint {
+  background-color: rgba(255, 204, 0, 0.1);
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-size: 0.9rem;
+  display: none;
+}
+
+.challenge-form {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.challenge-input {
+  flex: 1;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-color);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+}
+
+.challenge-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(14, 255, 0, 0.3);
+}
+
+.challenge-submit {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: rgba(14, 255, 0, 0.1);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  color: var(--primary-color);
+  font-family: 'Fira Code', monospace;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.challenge-submit:hover {
+  background-color: rgba(14, 255, 0, 0.2);
+  box-shadow: 0 0 5px rgba(14, 255, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+  }
+  
+  .team-info {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .team-name {
+    margin-right: 0;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: var(--spacing-xs);
+  }
+  
+  .tab {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .challenges-grid {
+    grid-template-columns: 1fr;
+  }
+}
