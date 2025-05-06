@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBER SENTINAL - Cybersecurity Competition</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/glitch.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="overlay"></div>
+  <div class="terminal">
+    <div id="landing-page" class="page active">
+      <div class="container">
+        <div class="welcome-text">
+          <h1 class="glitch-text" data-text="HACKERCTF">HACKERCTF</h1>
+          <div class="scanner"></div>
+          <p class="subtitle">Capture the Flag Cybersecurity Competition for Students</p>
+          <div class="countdown-container">
+            <div class="countdown-header">CTF STARTS IN:</div>
+            <div class="countdown">
+              <div class="countdown-item">
+                <div id="days" class="countdown-value">00</div>
+                <div class="countdown-unit">DAYS</div>
+              </div>
+              <div class="countdown-item">
+                <div id="hours" class="countdown-value">00</div>
+                <div class="countdown-unit">HOURS</div>
+              </div>
+              <div class="countdown-item">
+                <div id="minutes" class="countdown-value">00</div>
+                <div class="countdown-unit">MINUTES</div>
+              </div>
+              <div class="countdown-item">
+                <div id="seconds" class="countdown-value">00</div>
+                <div class="countdown-unit">SECONDS</div>
+              </div>
+            </div>
+          </div>
+          <div class="cta-buttons">
+            <button id="login-btn" class="btn btn-primary">LOGIN</button>
+            <button id="register-btn" class="btn btn-secondary">REGISTER</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="login-page" class="page">
+      <div class="container form-container">
+        <h2>LOGIN <span class="cursor">_</span></h2>
+        <form id="login-form" class="auth-form">
+          <div class="form-group">
+            <label for="login-team">TEAM NAME</label>
+            <input type="text" id="login-team" placeholder="Enter your team name" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">PASSWORD</label>
+            <input type="password" id="login-password" placeholder="Enter your password" required>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">ACCESS_SYSTEM</button>
+            <button type="button" id="back-to-landing" class="btn btn-secondary">BACK</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="register-page" class="page">
+      <div class="container form-container">
+        <h2>REGISTER <span class="cursor">_</span></h2>
+        <form id="register-form" class="auth-form">
+          <div class="form-group">
+            <label for="register-team">TEAM NAME</label>
+            <input type="text" id="register-team" placeholder="Choose a team name" required>
+          </div>
+          <div class="form-group">
+            <label for="register-password">PASSWORD</label>
+            <input type="password" id="register-password" placeholder="Choose a password" required>
+          </div>
+          <div class="form-group">
+            <label for="register-confirm-password">CONFIRM PASSWORD</label>
+            <input type="password" id="register-confirm-password" placeholder="Confirm your password" required>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">CREATE_TEAM</button>
+            <button type="button" id="back-from-register" class="btn btn-secondary">BACK</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="dashboard-page" class="page">
+      <!-- Dashboard content will be loaded dynamically -->
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
